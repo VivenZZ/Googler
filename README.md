@@ -8,4 +8,7 @@
 ### 2020/07/26
 1. [什么是防抖和节流？有什么区别？如何实现？](./html/2.md)
 2. [讲一讲Map与Set](./javascript/3.md)
-3. [Array.form 和[...]的区别](./javascript/4.md)
+3. [Array.from 和[...]的区别](./javascript/4.md)
+
+### 2020/07/27
+1. [Symbol](./javascript/5.md)
