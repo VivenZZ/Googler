@@ -6,17 +6,8 @@
 </head>
 <body>
 <div id="app">
-    <button @click="renderList">提交</button><button @click="renderListByKey">提交key</button>
-    <button @click="renderListChange">替换数据</button><button @click="renderListByKeyChange">key替换数据</button>
-    <button @click="renderListReserve">重新排序</button><button @click="renderListByKeyReserve">key重新排序</button>
-    <div style="display: flex">
-        <ul>
-            <li v-for="(item, index) in dataList">{{ item.text }}</li>
-        </ul>
-        <ul>
-            <li v-for="(item, index) in dataListByKey" :key="item.id" :title="item.id">{{ item.text }}</li>
-        </ul>
-    </div>
+    <input type="text" v-model="value">
+    {{ value }}
 </div>
 <script src="../node_modules/vue/dist/vue.js" ></script>
 <script>
@@ -24,73 +15,7 @@
         el: '#app',
         data(){
             return {
-                dataListByKey: [],
-                dataList: [],
-                msg: '测试',
-                time: ''
-            }
-        },
-        created() {
-            console.log('created')
-        },
-        beforeUpdate(){
-            this.time = new Date().getTime()
-        },
-        updated(){
-            console.log(`更新后${new Date().getTime() - this.time}`)
-        },
-        methods: {
-            renderList: function () {
-                console.log(`生成数据`)
-                const list = []
-                for(let i = 0; i < 100000; i++) {
-                    list.push({
-                        text: i,
-                        id: Math.random()*10000000
-                    })
-                }
-                this.dataList = list
-            },
-            renderListByKey: function () {
-                console.log(`生成数据ByKey`)
-                const list = []
-                for(let i = 0; i < 100000; i++) {
-                    list.push({
-                        text: i,
-                        id: Math.random()*10000000
-                    })
-                }
-                this.dataListByKey = list
-            },
-            renderListChange: function () {
-                console.log(`替换数据`)
-                const updataList = []
-                for(let i = 100000; i > 0; i--) {
-                    updataList.push({
-                        text: i,
-                        id: Math.random()*10000000
-                    })
-                }
-                this.dataList = updataList
-            },
-            renderListByKeyChange: function () {
-                console.log(`替换数据ByKey`)
-                const updataList = []
-                for(let i = 100000; i > 0; i--) {
-                    updataList.push({
-                        text: i,
-                        id: Math.random()*10000000
-                    })
-                }
-                this.dataListByKey = updataList
-            },
-            renderListReserve: function () {
-                console.log(`排序`)
-                this.dataList.reverse()
-            },
-            renderListByKeyReserve: function () {
-                console.log(`排序ByKey`)
-                this.dataListByKey.reverse()
+                value: ''
             }
         }
     })
