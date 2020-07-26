@@ -1,3 +1,10 @@
-let arr = [1,2,3,4,3,2,NaN,2,NaN,null,null,undefined,undefined,{a:1},{a:1}]
-let set = new Set(arr)
-console.log(set.has({a:1}))
+let obj = {a: 1,b: 2}
+function objToMap(obj){
+    let map = new Map()
+    for (let key of Object.keys(obj)) {
+        map.set(key, obj[key])
+    }
+    return map
+}
+
+console.log(objToMap(obj)) // Map(2) { 'a' => 1, 'b' => 2 }
