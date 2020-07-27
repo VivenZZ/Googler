@@ -1,22 +1,7 @@
-let obj = {
-    '0': 1,
-    '1': 2,
-    '2': 3,
-    length: 4,
-    [Symbol.iterator]: function(){
-        let index = 0
-        let next = () => {
-            return {
-                value: this[index],
-                done: this.length == ++ index
-            }
-        }
-        return {
-            next
-        }
-    }
-}
-let arr = Array.from(obj)
-console.log(arr)
-let arr1= [...obj]
-console.log(arr1)
+const Login = require('./2.js')
+const PASSWORD = Symbol()
+const login = new Login('admin', '123456')
+console.log(login.checkPassword('123456'))
+console.log(login.username)
+console.log(login[PASSWORD])
+console.log(login['PASSWORD']) // undefined

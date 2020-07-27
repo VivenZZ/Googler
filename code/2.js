@@ -1,10 +1,12 @@
-let obj = {a: 1,b: 2}
-function objToMap(obj){
-    let map = new Map()
-    for (let key of Object.keys(obj)) {
-        map.set(key, obj[key])
+const PASSWORD = Symbol()
+class Login {
+    constructor(username, password) {
+        this.username = username
+        this[PASSWORD] = password
     }
-    return map
-}
 
-console.log(objToMap(obj)) // Map(2) { 'a' => 1, 'b' => 2 }
+    checkPassword(pwd) {
+        return this[PASSWORD] === pwd
+    }
+}
+module.exports = Login

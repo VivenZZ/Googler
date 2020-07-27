@@ -12,3 +12,5 @@
 
 ### 2020/07/27
 1. [Symbol](./javascript/5.md)
+2. [module.exports 和 exports , export defult 和 export 之间的区别！！！ ](./javascript/6.md)
+3. [vue input直接赋值不生效的问题！(v-module指令原理)](./vue/2.md)

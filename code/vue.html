@@ -6,8 +6,8 @@
 </head>
 <body>
 <div id="app">
-    <input type="text" v-model="value">
-    {{ value }}
+    <input type="text" v-model="data.msg" >
+    {{ data.msg }}
 </div>
 <script src="../node_modules/vue/dist/vue.js" ></script>
 <script>
@@ -15,8 +15,12 @@
         el: '#app',
         data(){
             return {
-                value: ''
+                data: {
+                }
             }
+        },
+        created() {
+            this.data.msg = '123123'
         }
     })
 </script>
