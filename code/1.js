@@ -1,4 +1,5 @@
 const Login = require('./2.js')
+
 console.log(Login);
 const PASSWORD = Symbol()
 const login = new Login('admin', '123456')
