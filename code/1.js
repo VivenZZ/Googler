@@ -1,9 +1,6 @@
-const Login = require('./2.js')
 
-console.log(Login);
-const PASSWORD = Symbol()
-const login = new Login('admin', '123456')
-console.log(login.checkPassword('123456'))
-console.log(login.username)
-console.log(login[PASSWORD])
-console.log(login['PASSWORD']) // undefined
+const arr = [1,2,3]
+console.log(Array.isArray(arr)) // true
+console.log(arr.constructor === Array) // true
+console.log(arr instanceof Object)
+console.log(Object.prototype.toString.call(arr) === '[object Array]')
