@@ -16,11 +16,13 @@
         data(){
             return {
                 data: {
+                    normalMsg: '正常数据'
                 }
             }
         },
         created() {
-            this.data.msg = '123123'
+            // this.$set(this.data, 'msg', '123123')
+            this.data = Object.assign({}, this.data, {msg: '1231231'})
         }
     })
 </script>
