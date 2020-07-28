@@ -2,3 +2,7 @@
 2. 推送 `git push -u origin master `
 3. 关联远程 `git remote add origin git@github.com:VivenZZ/Googler.git `
 4. 断开远程  `git remote remove origin`
+5. 查看远程仓库地址 `git remote -v `
+6. 新建分支 `git checkout -b dev`
+7. 跳转到指定版本号 `git reset --hard xxxx`
+8. 合并分支 `git merge dev`
