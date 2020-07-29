@@ -10,21 +10,11 @@
 <body>
 <button id="btn">提交</button>
 <script>
-    document.getElementById('btn').addEventListener('click', debounce(submit))
-
-    function debounce(fn){
-        let timer = null
-        return function() {
-            clearTimeout(timer)
-            timer = setTimeout(function() {
-                fn()
-            }, 1000)
-        }
-    }
-    function submit(){
-        console.log('请求数据')
-    }
-
+    var b = 20;
+(function b(){
+  b = 20
+  console.log(b);
+})();
 </script>
 </body>
 </html>

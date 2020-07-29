@@ -20,3 +20,11 @@
 1. [两数之和(算法题)](./javascript/7.md)
 2. [判断数组有哪些方法](./javascript/8.md)
 3. [var let const 的区别](./javascript/9.md)
+
+### 2020/07/29
+1. [看看下面的代码将打印什么？](./javascript/10.md)
+2. [改造下面的代码，打印10 20](./javascript/11.md)
+3. [看看下面的代码将打印什么？](./javascript/12.md)
+
+### 2020/07/30
+1. [toString 和 valueOf的不同](./javascript/13.md) 
