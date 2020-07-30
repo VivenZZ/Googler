@@ -1,0 +1,4 @@
+http://www.webstormthemes.com/
+
+下载cils文件，放入webstrom安装包的colors文件夹下，然后文件=设置=color SchemeFont
+=方案右边有个齿轮，导入
