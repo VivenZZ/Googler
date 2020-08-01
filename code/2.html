@@ -10,11 +10,16 @@
 <body>
 <button id="btn">提交</button>
 <script>
-    var b = 20;
-(function b(){
-  b = 20
-  console.log(b);
-})();
+let name = 'kevin'
+let obj = {
+  name: 'viven'
+}
+function getName() {
+  console.log(this.name)
+}
+let newGetName = getName.bind(obj)
+getName() // kevin
+newGetName() // viven
 </script>
 </body>
 </html>
