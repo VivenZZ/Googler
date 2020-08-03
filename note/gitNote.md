@@ -13,3 +13,4 @@
 13. 合并主干到分支`git merge master --squash` --squash 只提交当前修改记录
 14. 拉去代码并采取传入的更改 `git merge --strategy-option theirs dev`
 15. 拉去代码并采取本地的更改 `git merge --strategy-option ours dev`
+16. 查看创建分支时间 `git reflog show --date=iso master`
