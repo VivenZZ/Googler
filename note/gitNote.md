@@ -14,3 +14,16 @@
 14. 拉去代码并采取传入的更改 `git merge --strategy-option theirs dev`
 15. 拉去代码并采取本地的更改 `git merge --strategy-option ours dev`
 16. 查看创建分支时间 `git reflog show --date=iso master`
+
+# git subTree
+1. 进入项目根目录，给需要添加的子项目，添加别名
+`git remote add basicpage ssh://git@192.168.100.101:2222/frontend/basicpage.git`
+
+2. 新增公共文件: 进入项目根目录，在项目中添加 git subtree add --prefix=S项目的路径 S项目git地址|别名 xxx分支 --squash则直接提交
+`git subtree add --prefix=src/basic basicpage  master --squash`
+
+3. 提交子代码 git subtree push --prefix=S项目的路径 S项目git地址 xxx分支 --squash则直接提交
+`git subtree push --prefix=src/basic basicpage  master`
+
+4. 更新子代码 git subtree pull --prefix=S项目的路径 S项目git地址 xxx分支  
+`git subtree pull --prefix=src/basic basicpage  master`
