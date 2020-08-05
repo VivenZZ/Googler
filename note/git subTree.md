@@ -51,3 +51,75 @@ git subtree pull --prefix=src/basic basicpage  master
 ```
 
 当然还有一些分支类的命令，大家自己可以去研究了，这里只是简单的用法。
+
+## 闭包
+### 闭包的原理
+闭包是指有权访问另一个函数作用域中的变量的函数
+```js
+function compare(propertyName){
+  return function (obj){
+    // 这个匿名函数中可以访问compare函数中的propertyName变量
+    return obj[prototyName]
+  }
+}
+compare()
+```
+### 作用域链
+* <font color='red'>当函数被调用时</font>，会创建一个执行环境以及相应的作用域链
+* 使用arguments和命名参数创建一个活动对象。
+* 后台每个执行环境都会有一个表示变量的对象，变量对象。全局的变量对象一直存在，函数的变量对象只存在函数执行的过程中。
+* compare函数执行的时候会创建一个包含全局的作用域链，这个作用域链保存在内部的[[scope]]属性中。
+* 当调用compare函数的时候，会创建一个执行环境，然后复制[[scope]]中的对象，构造出执行环境中的作用域链
+* <font color='red'>作用域链本质上时指向变量对象的一个指针，是一个引用。</font>
+
+```js
+function createFunctions(){
+  let result = []
+  for(var i = 0; i < 10; i++){
+    result[i] = function(){
+      console.log(i)
+    }
+  }
+  return result
+}
+let funs = createFunctions()
+funs.forEach(fn=>{
+  fn()
+})
+```
+这里输出10个10，因为作用域链指向的是变量对象的一个指针，是引用类型的。所以最后的i都是10
+如果要改成打印0~9，可以通过两种办法，一种是通过一个自执行的函数传入参数，因为参数是按值传递的，可以得到每次的i的值。二是通过设置for里面的var 为let，因为let是块级作用域，而且for循环每次生成的i都是互相独立的，但是能自动记录上次的值，所以每次for循环都会重新生成let i=xx。这样每个函数引用的都是不同的i。
+```js
+// 1 传值
+function createFunctions(){
+  let result = []
+  for(var i = 0; i < 10; i++){
+    result[i] = function(num){
+        return function(){
+          console.log(num)
+        }
+      }(i)
+  }
+  return result
+}
+let funs = createFunctions()
+funs.forEach(fn=>{
+  fn()
+})
+```
+```js
+// 1 let
+function createFunctions(){
+  let result = []
+  for(let i = 0; i < 10; i++){
+    result[i] = function(){
+      console.log(i)
+    }
+  }
+  return result
+}
+let funs = createFunctions()
+funs.forEach(fn=>{
+  fn()
+})
+```
