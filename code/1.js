@@ -1,11 +1,5 @@
-function createFunctions(){
-  var result = new Array();
-  for (var i=0; i < 10; i++){
-    result[i] = function(){
-      return i;
-    };
-  }
-  return result;
+b = '3123'
+function a() {
+  console.log(this.b);
 }
-let arr = createFunctions()
-arr.forEach(fn=>console.log(fn()))
+a()
