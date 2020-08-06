@@ -9,17 +9,22 @@
 </head>
 <body>
 <button id="btn">提交</button>
+<ul class="ul" id="id">
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ul>
+<div class="box"></div>
+<ul class="ul2">
+</ul>
 <script>
-let name = 'kevin'
-let obj = {
-  name: 'viven'
-}
-function getName() {
-  console.log(this.name)
-}
-let newGetName = getName.bind(obj)
-getName() // kevin
-newGetName() // viven
+  var ul = document.getElementsByClassName('ul')[0]
+  console.log(ul.className);
+  console.log(ul.id);
+  console.log(ul.getAttribute('id'));
+  console.log(ul.setAttribute('ID','xxxx')); 
+  console.log(ul.setAttribute('class','xxxx'));
+  console.log(ul.removeAttribute('class'));
 </script>
 </body>
 </html>
