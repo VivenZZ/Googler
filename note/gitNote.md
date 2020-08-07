@@ -14,6 +14,7 @@
 14. 拉去代码并采取传入的更改 `git merge --strategy-option theirs dev`
 15. 拉去代码并采取本地的更改 `git merge --strategy-option ours dev`
 16. 查看创建分支时间 `git reflog show --date=iso master`
+17. 拉取远程分支代码 `git clone -b dev 地址`
 
 # git subTree
 1. 进入项目根目录，给需要添加的子项目，添加别名
