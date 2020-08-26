@@ -1,8 +1,11 @@
-function maxVal(arr, len) {
-  let maxArr = []
-  for(let i = 0; i < arr.length - len + 1; i++) {
-    maxArr.push(Math.max(...arr.slice(i, i + len)))
-  }
-  return maxArr
+function *gen(){
+  yield 'hello'
+  yield 'world'
+  return 'ending'
 }
-console.log(maxVal([1,3,-1,-3,5,3,6,7], 3))
+let hw = gen()
+console.log(hw.next());
+console.log(hw.next());
+console.log(hw.next());
+console.log(hw.next());
+console.log(hw.next());

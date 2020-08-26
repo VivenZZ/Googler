@@ -38,4 +38,4 @@
 1. [栈算法](./javascript/16.md)
 
 ### 2020/08/18
-1. [webpack之loader加载顺序为啥从右往左]
+1. [webpack之loader加载顺序为啥从右往左](./javascript/18.md)

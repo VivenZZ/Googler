@@ -1,4 +1,5 @@
 
-let arr1 = [1,3,11,5,7,41]
-arr1.sort()
-console.log(arr1)
+var a = [1,2,3]
+console.log(a)
+a.reverse() 
+console.log(a)
